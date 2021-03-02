@@ -1,138 +1,166 @@
-###### CS-207-3: Programming II <br> Spring 2021 <br> Northeastern Illinois University <br> Homework #5 <br> Due Date: 03/03/21 at 9:00 p.m. (CT) <br> Inheritance
+<h6>
+CS-207-3: Programming II <br> 
+Spring 2021 <br> 
+Northeastern Illinois University <br> 
+Homework #6 <br> 
+Due Date: 03/10/21 at 9:00 p.m. (CT) <br> 
+Polymorphism
+</h6>
 
-**Getting Started**
+#### Getting Started
 
-**1.** Clone the assignment to your computer.<br>
-**2.** Go to File > Project Structure. Under Project Settings, click on Project and verify that the Project SDK is set
-to JDK 11 or higher.  If it is not, select the correct SDK from the drop-down.<br>
-**3.** Go to File > Settings (Mac: IntelliJ IDEA > Preferences). Under Build, Execution, Deployment and under Build
-Tools, click Gradle. Make sure Build and run using: and Run tests using: are set to Gradle. Make sure Use Gradle from:
-is set to 'gradle-wrapper.properties' file. And make sure Gradle JVM is set to JDK 11 or higher.<br>
-**4.** Project SDK and Gradle JVM should be set to the same Java version.<br>
-**5.** Create the `main/java` directory in the `src` directory. This is where you will be creating your Java classes for
-your assignment. Right click `src` and go to New > Directory and select `main/java`.<br>
+1. Clone the assignment to your computer.
+2. Go to File > Project Structure. Under Project Settings, click on Project and verify that the Project SDK is
+   set to JDK 11 or higher.  If it is not, select the correct SDK from the drop-down.
+3. Go to File > Settings (Mac: IntelliJ IDEA > Preferences). Under Build, Execution, Deployment and under Build
+   Tools, click Gradle. Make sure Build and run using: and Run tests using: are set to Gradle. Make sure Use Gradle from:
+   is set to 'gradle-wrapper.properties' file. And make sure Gradle JVM is set to JDK 11 or higher.
+4. Project SDK and Gradle JVM should be set to the same Java version.
+5. Create the `main/java` directory in the `src` directory. This is where you will be creating your Java 
+   classes for your assignment. Right click `src` and go to `New > Directory` and select `main/java`. 
 
-**Submitting your assignment**
+#### Submitting your assignment
 
-**1.** Once you have completed all the problems, commit your final code to GitHub - remember to run all
-  the unit tests and the code analyzers. <br>
-**2.** Then in IntelliJ, go to File, select Export to Zip File. This will create a zip file of the entire project directory.<br>
-**3.** Submit the .zip file to the Homework 5 Assignment folder on D2L.<br>
+1. Make sure that all your code is committed to GitHub and that all the code analyzers and unit tests
+   pass.
+2. You will have the opportunity to make corrections on any code that is a complete/valid attempt at
+   solving the problem. Code that does not compile or run does not constitute a complete/valid attempt.
+3. In IntelliJ, go to File, select Export to Zip File. This will create a zip file of the entire project 
+   directory.
+4. Submit the .zip file to the Homework 6 Assignment folder on D2L.
 
-### Problem 1
+#### Running Tests and Code Analyzers
 
-1. In the `main/java` directory, create a package named `tracing`. Create the following classes inside the 
-`tracing` package (note each class goes in its own file!): <br>
-   <br>
-   ![Tracing image](images/Tracing.png)
-   <br><br>
+1. To run unit tests: Click the green arrow to the left of each header to run the tests individually or click the
+   green arrow to the left of the class header to run all the tests. If they do not pass, your code is incorrect.
+2. To run code analyzers: On the right side of IntelliJ, click Gradle, expand Tasks > other.
+    - Double-click the checkstyleMain task to run it.
+    - Double-click on the pmdMain task in the same panel.
+    - If there are errors: You can click the link provided, then choose your browser of choice at the top-right corner to view the
+      error description or in the bottom left panel, click the middle red exclamation point to view the error.
+      Fix the issue and rerun checkstyleMain, repeat if necessary.
+3. Note that while having all the unit tests and pmd/checkstyle tests is the first step for your code to be
+   considered correct, this does not necessarily mean the algorithm is correct.
+4. Once unit tests and code analyzers all pass, open GitHub Desktop. You will be able to see the files that
+   have been changed in the left panel. Enter a summary in the bottom left then click "Commit to main". Then click Push
+   Origin in the right panel at the top.
+5. If you go to your GitHub account and go to the Actions tab for this assignment repository, you can see the
+   workflow running.
 
-2. Use the debugger to step through the code in the `main` method.
-3. Put the output for the code as comments above the `main` method in the `TracingDemo` class. 
-4. Commit and push to GitHub.
+### Problem 1: Polymorphism
 
-### Problem 2: Inheritance
-
-1. In the `main/java` directory, create a package named `problem2`. 
-2. In the `problem2` directory, create a class named `AppleDevice` that has/does the following:
-   - Three private (i.e. encapsulated) instance variables: A String named `name`, a double named
-     `price`, and a long named `serialNumber`. The `name` and `serialNumber` instance variables
-     should both be `final`.
-   - A constructor that takes three parameters: A String, a double, and a long (in that order) 
-     and sets the instance variable.
-   - A getter and setter for the `price` instance variable.
-   - Uncomment and run the following tests in the `test/problem2/AppleDeviceTest.java` file:
-      - `shouldTestGetPriceInAppleDevice`
-      - `shouldTestSetPriceInAppleDevice`
-   - Override the `toString` method to return the name, followed by a space, followed by the serial number.
-   - Uncomment and run the following test in the `test/problem2/AppleDeviceTest.java` file:
-      - `shouldTestToStringInAppleDevice`
-   - Run the code analyzers. If they pass, commit and push your code to GitHub.
-2. In the `problem2` directory, create a Java class named `IPhone` that inherits from `AppleDevice` 
-   that has/does the following:
-   - An encapsulated (and final) instance variable: A String named `generation`
-   - A constructor that takes 4 parameters (String, double, long, String) and sets the superclass instance 
-     variables and then the `generation` instance variable.
-   - A getter for the `generation` instance variable.
-   - Uncomment and run the following tests in the `test/problem2/IPhoneTest.java` file:
-     - `shouldTestGetGenerationInIPhone`
-     - `shouldTestInheritanceForIPhone`
-   - Override the `toString` method to return the name, followed by a space, followed by a serial number 
-     followed by a space and then the generation. **Do not add any additional methods other than the ones
-     explicitly described in the instructions.**
-   - Uncomment and run the following test in the `test/problem2/IPhoneTest.java` file:
-     - `shouldTestToStringInIPhone`
-   - Run the code analyzers. If they pass, commit and push your code to GitHub.
-3. In the `problem2` directory, create a Java class named `DeviceDemo` that has/does the following:
-   - The `main` method. In the `main` method, create a several `AppleDevice` and `IPhone` objects and
-     print out the results of calling the `toString` method on the reference variables.
-   - Run the code analyzers. If they pass, commit and push your code to GitHub.
-
-### Problem 3: Aggregation
-
-1. In the `main/java` directory, create a package named `problem3`. 
-2. In the `problem3` directory, create a class named `Student` that has/does the following:
-    - An encapsulated (and final) instance variable: A String named `name`.
-    - A constructor that takes one parameter (a String) and sets the instance variable.
-    - A getter for the instance variable.
-    - Override the `toString` method to return the name. 
-    - Uncomment and run the following tests in the `test/problem3/StudentTest.java` file:
-        - `shouldTestToString`
-3. In the `problem3` directory, create a class named `Faculty` that has/does the following:
-    - An encapsulated (and final) instance variable: A String named `name`.
-    - A constructor that takes one parameter (a String) and sets the instance variable.
-    - A getter for the instance variable.
-    - Override the `toString` method to return the name.
-    - Uncomment and run the following tests in the `test/problem3/FacultyTest.java` file:
-        - `shouldTestToString`
-4. In the `problem3` directory, create a class named `Course` that has/does the following:
-    - An encapsulated (and final) instance variable: A long named `courseId`.
-    - An encapsulated (and final) instance variable: A String named `name`.
-    - An encapsulated instance variable: A `Faculty` named `instructor`.
-    - An encapsulated instance variable: A 1D `Student` array named `students`.
-    - A constructor that takes two parameters (a long and a String) and sets the `courseId` 
-      and `name` instance variables. The constructor should also initialize the `students` array
-      to hold 30 elements.
-    - A getter and setter for the `instructor` instance variable.
-    - Override the `toString` method to return the `courseId` followed by a space, followed by the `name`.
-    - A method named `addStudent` that takes one parameter, a `Student` and does not return anything. The 
-      method should add the `Student` to the first non-null location in the array. To check if something
-      is `null`, you use `==` (ex: `students[0] == null`). For this exercise, you can assume that the
-      array will always have a null value somewhere in the array.
-    - Uncomment and run the following tests in the `test/problem3/CourseTest.java` file:
-        - `shouldTestToString`
-        - `shouldTestGetSetInstructor`
-    - A method named `displayCourseInfo` that prints out the following information:
-        - The course id and course name (use methods that you've already written!) on one line
-        - `Instructor:` followed by the instructor name on one line
-        - `Students:` followed by the name of each student in the course on its own line.
-    - Run the code analyzers. If they pass, commit and push your code to GitHub.
-5. In the `problem3` directory, create a class named `CourseDemo` with the `main` method. In the `main`
-method, add the following code:
-```
-Course course = new Course(7394, "Programming II");
-Faculty f = new Faculty("Dr. Dean Harding");
-course.setInstructor(f);
-Student s1 = new Student("Francis James");
-Student s2 = new Student("Jenna Williams");
-Student s3 = new Student("Carole King");
-course.addStudent(s1);
-course.displayCourseInfo();
-course.addStudent(s2);
-course.addStudent(s3);
-course.displayCourseInfo();
-```
-6. If you created the classes correctly, you will see the following output:
-```
-7394 Programming II
-Instructor: Dr. Dean Harding
-Students:
-Francis James
-7394 Programming II
-Instructor: Dr. Dean Harding
-Students:
-Francis James
-Jenna Williams
-Carole King
-```
-7. Run the code analyzers. If they pass, commit and push your code to GitHub.
+1. `Employee.java`: In the `src/main` directory, create a java class named `Employee.java` with the 
+   following:
+      - Two encapsulated instance variables: A `String` named `name` and an integer named `hireYear`.
+      - A constructor that takes a `String` and an integer and sets the instance variables.
+      - An instance method named `monthlyPay` that does not take any parameters and returns a double. This 
+        method should return `0`.
+      - An instance method named `annualPay` that does not take any parameters and returns a double. This
+        method should return `0`.
+      - Override the `toString` method to return a `String` that has the word `"Name: "` concatenated with 
+        the `name` instance variable concatenated with a space and the word `"Hired: "` concatenated with 
+        the `hireYear` instance variable.
+      - Override the `equals` method. You should use the `instanceof` keyword because we are going to be 
+        creating a large inheritance hierarchy. Follow the steps presented in Lecture 7.3, Slide 5, however
+        two `Employee` objects are considered "equal" if their `annualPay` and their `monthlyPay` are the same.
+      - Do **not** add any additional methods other than what is described in the instructions.
+      - In the `src/test/java/EmployeeTest.java` file, uncomment the tests and run them.
+      - Run the code analyzers.
+      - Commit your code to GitHub.
+2. `SalariedEmployee.java`: In the `src/main` directory, create a java class named `SalariedEmployee.java` 
+   that inherits from `Employee` with the following:
+   - An encapsulated instance variable: An integer named `annualSalary`.
+   - A constructor that takes a `String` and an integer and sets the superclass instance variables.
+   - A setter method for the `annualSalary` instance variable.
+   - Override the `monthlyPay` method to return the `annualSalary` divided by 12.
+   - Override the `annualPay` method to return the `annualSalary`.
+   - Do **not** add any additional methods other than what is described in the instructions.
+   - In the `src/test/java/SalariedEmployeeTest.java` file, uncomment the tests and run them.
+   - Run the code analyzers.
+   - Commit your code to GitHub.
+3. `HourlyEmployee.java`: In the `src/main` directory, create a java class named `HourlyEmployee.java`
+   that inherits from `Employee` with the following:
+   - Two encapsulated instance variable: An integer named `hoursPerWeek` and a double named `hourlyWage`.
+   - A constructor that takes a `String` and an integer and sets the superclass instance variables.
+   - Setter methods for both the instance variables.
+   - Override the `monthlyPay` method to return the `hourlyWage` x 4 x `hoursPerWeek`.
+   - Do **not** add any additional methods other than what is described in the instructions.
+   - In the `src/test/java/HourlyEmployeeTest.java` file, uncomment the tests and run them.
+   - Run the code analyzers.
+   - Commit your code to GitHub.
+4. `Manager.java`: In the `src/main` directory, create a java class named `Manager.java`
+   that inherits from `SalariedEmployee` with the following:
+   - A constructor that takes a `String` and an integer and sets the superclass instance variables.
+   - Override the `annualPay` method to return the annual pay + a 10% bonus.
+   - Do **not** add any additional methods other than what is described in the instructions.
+   - In the `src/test/java/ManagerTest.java` file, uncomment the tests and run them.
+   - Run the code analyzers.
+   - Commit your code to GitHub.
+5. `Staff.java`: In the `src/main` directory, create a java class named `Staff.java`
+   that inherits from `SalariedEmployee` with the following:
+   - A constructor that takes a `String` and an integer and sets the superclass instance variables.
+   - Override the `annualPay` method to return the annual pay + a 2% bonus.
+   - Do **not** add any additional methods other than what is described in the instructions.
+   - In the `src/test/java/StaffTest.java` file, uncomment the tests and run them.
+   - Run the code analyzers.
+   - Commit your code to GitHub.
+6. `FullTime.java`: In the `src/main` directory, create a java class named `FullTime.java`
+   that inherits from `HourlyEmployee` with the following:
+   - A constructor that takes a `String` and an integer and sets the superclass instance variables.
+   - Override the `annualPay` method to return 50 weeks of wages + 2 weeks wages as bonus.
+   - Do **not** add any additional methods other than what is described in the instructions.
+   - In the `src/test/java/FullTimeTest.java` file, uncomment the tests and run them.
+   - Run the code analyzers.
+   - Commit your code to GitHub.
+7. `PartTime.java`: In the `src/main` directory, create a java class named `PartTime.java`
+   that inherits from `HourlyEmployee` with the following:
+   - A constructor that takes a `String` and an integer and sets the superclass instance variables.
+   - Override the `annualPay` method to return 50 weeks of wages (no bonus).
+   - Do **not** add any additional methods other than what is described in the instructions.
+   - In the `src/test/java/PartTime.java` file, uncomment the tests and run them.
+   - Run the code analyzers.
+   - Commit your code to GitHub.
+8. In the `src/main` directory, a class named `EmployeeDemo` has already been created for you, along with 
+   the `main` method.
+   - Uncomment the code in the `main` method.
+   - Write the code need to print out the name, hire year, monthly pay and annual pay of each employee in 
+     the `employees` array so that it looks like the following:
+     ```
+     Name: Employee1 Hired: 1992
+     Monthly Pay: 0.0
+     Annual Pay: 0.0
+     Name: Hourly1 Hired: 1908
+     Monthly Pay: 800.0
+     Annual Pay: 0.0
+     Name: Salaried1 Hired: 1986
+     Monthly Pay: 6666.0
+     Annual Pay: 80000.0
+     Name: Manager1 Hired: 2009
+     Monthly Pay: 6666.0
+     Annual Pay: 88000.0
+     Name: Staff1 Hired: 2005
+     Monthly Pay: 4166.0
+     Annual Pay: 51000.0
+     Name: PartTime1 Hired: 1998
+     Monthly Pay: 1600.0
+     Annual Pay: 20000.0
+     Name: FullTime1 Hired: 2020
+     Monthly Pay: 1600.0
+     Annual Pay: 20800.0
+     Name: Manager2 Hired: 2003
+     Monthly Pay: 6666.0
+     Annual Pay: 88000.0
+     ```
+   - Write the code need to compare each element in the `employees` array with all the employees that occur
+     after it in the array using the `equals` method. Print out each employee's information followed by whether
+     or not they are "equal". Note that only one pair of employees in the array will evaluate to true. For example:
+     ```
+     Name: Employee1 Hired: 1992
+     Name: Hourly1 Hired: 1908
+     false
+     Name: Employee1 Hired: 1992
+     Name: Salaried1 Hired: 1986
+     false
+     ...
+     ```
+     

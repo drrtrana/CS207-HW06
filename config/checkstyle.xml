@@ -19,8 +19,8 @@
         <module name="RedundantModifier"/>
 
         <!--Coding-->
+        <!--        <module name="EqualsHashCode"/>-->
         <module name="EmptyStatement"/>
-        <module name="EqualsHashCode"/>
         <module name="IllegalCatch"/>
         <module name="IllegalThrows"/>
         <module name="InnerAssignment"/>
